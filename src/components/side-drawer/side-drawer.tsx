@@ -1,14 +1,23 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'iws-side-drawer',
+  styleUrl: './side-drawer.css',
+  shadow: true,
 })
 export class SideDrawer {
+  @Prop() title: string;
+
   render() {
     return (
-      <div style={{ color: 'red' }}>
-        <h1>The Side Drawer</h1>
-      </div>
+      <aside>
+        <header>
+          <h1>{this.title}</h1>
+        </header>
+        <main>
+          <slot />
+        </main>
+      </aside>
     );
   }
 }
