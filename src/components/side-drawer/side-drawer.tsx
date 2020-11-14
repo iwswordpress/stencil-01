@@ -6,7 +6,7 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class SideDrawer {
-  @Prop() title: string;
+  @Prop({ reflect: true }) title: string;
 
   render() {
     return (
@@ -14,6 +14,7 @@ export class SideDrawer {
         <header>
           <h1>{this.title}</h1>
         </header>
+        <my-component first="Craig"></my-component>
         <main>
           <slot />
         </main>

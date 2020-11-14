@@ -7,10 +7,34 @@
 
     <script type="module" src="/build/basic.esm.js"></script>
     <script nomodule src="/build/basic.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .side-nav ul {
+        list-style: none;
+      }
+
+      .side-nav li {
+        margin: 1rem 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-    <br />
-    <iws-side-drawer title="TEST TITLE"></iws-side-drawer>
+    <iws-side-drawer title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">A Link</a></li>
+          <li><a href="/">Another Link</a></li>
+          <li><a href="/">A third Link</a></li>
+        </ul>
+      </nav></iws-side-drawer
+    >
   </body>
 </html>
