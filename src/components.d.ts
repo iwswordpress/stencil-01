@@ -6,21 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface IwsSideDrawer {
     }
-    interface SideDrawer {
+    interface MyComponent {
         /**
           * The first name
          */
@@ -36,24 +24,26 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLIwsSideDrawerElement extends Components.IwsSideDrawer, HTMLStencilElement {
+    }
+    var HTMLIwsSideDrawerElement: {
+        prototype: HTMLIwsSideDrawerElement;
+        new (): HTMLIwsSideDrawerElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLSideDrawerElement extends Components.SideDrawer, HTMLStencilElement {
-    }
-    var HTMLSideDrawerElement: {
-        prototype: HTMLSideDrawerElement;
-        new (): HTMLSideDrawerElement;
-    };
     interface HTMLElementTagNameMap {
+        "iws-side-drawer": HTMLIwsSideDrawerElement;
         "my-component": HTMLMyComponentElement;
-        "side-drawer": HTMLSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface IwsSideDrawer {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -68,31 +58,17 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
-    interface SideDrawer {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
+        "iws-side-drawer": IwsSideDrawer;
         "my-component": MyComponent;
-        "side-drawer": SideDrawer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "iws-side-drawer": LocalJSX.IwsSideDrawer & JSXBase.HTMLAttributes<HTMLIwsSideDrawerElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;
         }
     }
 }

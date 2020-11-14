@@ -1,32 +1,14 @@
-import { Component, Prop, h } from '@stencil/core';
-import { format } from '../../utils/utils';
+import { Component, h } from '@stencil/core';
 
 @Component({
-  tag: 'side-drawer',
-  //styleUrl: 'my-component.css',
-  shadow: true,
+  tag: 'iws-side-drawer',
 })
-export class MyComponent {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
-
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }
-
+export class SideDrawer {
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return (
+      <div style={{ color: 'red' }}>
+        <h1>The Side Drawer</h1>
+      </div>
+    );
   }
 }
